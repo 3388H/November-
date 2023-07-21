@@ -1,6 +1,5 @@
 #include "main.h"
 
-//funcs
-void setIntakeVoltage(float power);
+void setIntakeVoltage(int power);
 
 void setIntake();

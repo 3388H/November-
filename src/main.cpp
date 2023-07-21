@@ -84,22 +84,10 @@ void autonomous() {}
 void opcontrol() {
 
 	while(1) {
-		frontLeftMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) + (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-		frontRightMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) - (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-		middleLeftMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) + (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-		middleRightMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) - (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-		backLeftMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) + (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-		backRightMotor.move(controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y) - (controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X)));
-
-		bool L1TON = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L1);
-		bool L2TON = controller.get_digital(pros::E_CONTROLLER_DIGITAL_L2);
-		intake.move((127.0 * (L1TON - L2TON)));
-
-		bool R1TON = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
-		if(R1TON)
-			scorer.move(127);
-		else
-			scorer.move(0);
+		
+		setMotors();
+		setIntake();
+		setPuncher();
 
 		pros::delay(10);
 	}

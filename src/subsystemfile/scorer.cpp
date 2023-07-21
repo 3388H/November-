@@ -2,17 +2,15 @@
 
 pros::ADIDigitalIn Limit(1);
 
-//funcs
-void setPuncherVoltage(float power) {
-    scorer = power;
+void setPuncherVoltage(int power) {
+    scorer.move(power);
 }
 
-//PUNCHER
 void setPuncher() {
     bool LimitState = Limit.get_value();
     bool R1TON = controller.get_digital(pros::E_CONTROLLER_DIGITAL_R1);
-    if(!LimitState || R1TON)
-        setPuncherVoltage(127.0);
+    if(R1TON)//if(!LimitState || R1TON)
+        setPuncherVoltage(127);
     else
-        setPuncherVoltage(0.0);
+        setPuncherVoltage(0);
 }

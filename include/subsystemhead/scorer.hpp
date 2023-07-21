@@ -1,7 +1,5 @@
 #include "main.h"
 
-//funcs
-void setPuncherVoltage(float power);
+void setPuncherVoltage(int power);
 
-//PUNCHER
 void setPuncher();
