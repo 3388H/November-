@@ -11,4 +11,4 @@ extern pros::Motor backRightMotor;
 extern pros::Motor intake;
 extern pros::Motor scorer;
 
-extern pros::ADIDigitalIn Limit;
+//extern pros::ADIDigitalIn Limit;
