@@ -11,4 +11,4 @@ pros::Motor backRightMotor(16, pros::E_MOTOR_GEARSET_06, false, pros::E_MOTOR_EN
 pros::Motor intake(17, pros::E_MOTOR_GEARSET_06, true, pros::E_MOTOR_ENCODER_COUNTS);
 pros::Motor scorer(18, pros::E_MOTOR_GEARSET_36, true, pros::E_MOTOR_ENCODER_COUNTS);
 
-//pros::ADIDigitalIn Limit(1);
+pros::ADIAnalogIn LineSensor(1);
