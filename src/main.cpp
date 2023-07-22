@@ -82,13 +82,16 @@ void autonomous() {}
  */
 
 void opcontrol() {
-
+	int past = 0;
+	bool senseStartCur = false;
 	while(1) {
 		
 		setMotors();
 		setIntake();
-		setPuncher();
+		pair<int, int> temp = setPuncher(senseStartCur, past);
+		senseStartCur = temp.first;
+		past = temp.second;
 
-		pros::delay(10);
+		pros::delay(8);
 	}
 }

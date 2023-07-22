@@ -2,4 +2,4 @@
 
 void setPuncherVoltage(int power);
 
-void setPuncher();
+pair<int, int> setPuncher(bool senseStart, int past);
