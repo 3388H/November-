@@ -82,16 +82,21 @@ void autonomous() {}
  */
 
 void opcontrol() {
-	int past = 0;
+	int past = 2900;
 	bool senseStartCur = false;
+	int counter = 0;
 	while(1) {
 		
 		setMotors();
-		setIntake();
-		pair<int, int> temp = setPuncher(senseStartCur, past);
-		senseStartCur = temp.first;
-		past = temp.second;
-
-		pros::delay(8);
+		bool curliftintake = setIntake();
+		vector<int> temp = setPuncher(curliftintake, senseStartCur, past, counter);
+		counter = temp[2];
+		past = temp[1];
+		senseStartCur = temp[0];
+		if(senseStartCur) {
+			counter += 10;//same as delay
+		}
+		
+		pros::delay(10);//10 milliseconds
 	}
 }

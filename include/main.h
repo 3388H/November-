@@ -83,6 +83,7 @@ void opcontrol(void);
 #include "subsystemhead/globals.hpp"
 #include "subsystemhead/intake.hpp"
 #include "subsystemhead/scorer.hpp"
+#include <vector>
 
 #endif
 

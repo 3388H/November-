@@ -2,4 +2,4 @@
 
 void setIntakeVoltage(int power);
 
-void setIntake();
+bool setIntake();

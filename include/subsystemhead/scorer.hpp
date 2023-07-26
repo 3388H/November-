@@ -2,4 +2,4 @@
 
 void setPuncherVoltage(int power);
 
-pair<int, int> setPuncher(bool senseStart, int past);
+vector<int> setPuncher(bool intaking, bool senseStart, int past, int counter);
