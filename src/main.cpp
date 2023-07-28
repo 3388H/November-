@@ -82,7 +82,7 @@ void autonomous() {}
  */
 
 void opcontrol() {
-	int past = 2900;
+	int past = 0;
 	bool senseStartCur = false;
 	int counter = 0;
 	while(1) {
