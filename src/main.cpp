@@ -96,7 +96,6 @@ void opcontrol() {
 		if(senseStartCur) {
 			counter += 10;//same as delay
 		}
-		// yes
 		pros::delay(10);//10 milliseconds
 	}
 }
