@@ -10,7 +10,7 @@ vector<int> setPuncher(bool intaking, bool senseStart, int past, int counter) {
 
     if(LineSensorState <= 1500 && past > 1500)
         senseStart = true;
-    if(counter > 200) {//250 milliseconds
+    if(counter > 200) {//200 milliseconds
         senseStart = false;
         counter = 0;
     }
