@@ -3,10 +3,8 @@
 void setMotorDriveVoltage(int left, int right) {
 
     backRightMotor.move(right);
-    middleRightMotor.move(right);
     frontRightMotor.move(right);
     backLeftMotor.move(left);
-    middleLeftMotor.move(left);
     frontLeftMotor.move(left);
 }
 

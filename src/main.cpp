@@ -54,48 +54,17 @@ void disabled() {}
  */
 void competition_initialize() {}
 
-/**
- * Runs the user autonomous code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the autonomous
- * mode. Alternatively, this function may be called in initialize or opcontrol
- * for non-competition testing purposes.
- *
- * If the robot is disabled or communications is lost, the autonomous task
- * will be stopped. Re-enabling the robot will restart the task, not re-start it
- * from where it left off.
- */
 void autonomous() {}
 
-/**
- * Runs the operator control code. This function will be started in its own task
- * with the default priority and stack size whenever the robot is enabled via
- * the Field Management System or the VEX Competition Switch in the operator
- * control mode.
- *
- * If no competition control is connected, this function will run immediately
- * following initialize().
- *
- * If the robot is disabled or communications is lost, the
- * operator control task will be stopped. Re-enabling the robot will restart the
- * task, not resume it from where it left off.
- */
-
 void opcontrol() {
-	int past = 0;
-	bool senseStartCur = false;
-	int counter = 0;
+	bool past = false;
 	while(1) {
 		
 		setMotors();
-		bool curliftintake = setIntake();
-		vector<int> temp = setPuncher(curliftintake, senseStartCur, past, counter);
-		counter = temp[2];
-		past = temp[1];
-		senseStartCur = temp[0];
-		if(senseStartCur) {
-			counter += 10;//same as delay
-		}
+		setIntake();
+		setLift();
+		past = setLoad(past);
+
 		pros::delay(10);//10 milliseconds
 	}
 }

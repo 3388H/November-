@@ -82,15 +82,9 @@ void opcontrol(void);
 #include "subsystemhead/drive.hpp"
 #include "subsystemhead/globals.hpp"
 #include "subsystemhead/intake.hpp"
-#include "subsystemhead/scorer.hpp"
-#include <vector>
+#include "subsystemhead/lift.hpp"
+#include "subsystemhead/matchload.hpp"
 
 #endif
 
 #endif  // _PROS_MAIN_H_
-
-
-
-
-
-
